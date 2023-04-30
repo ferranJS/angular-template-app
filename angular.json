@@ -43,7 +43,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/modern-angular-app",
+            "outputPath": "dist/modern-angular-app/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -121,6 +121,60 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/modern-angular-app/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "modern-angular-app:build:development",
+              "serverTarget": "modern-angular-app:server:development"
+            },
+            "production": {
+              "browserTarget": "modern-angular-app:build:production",
+              "serverTarget": "modern-angular-app:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "modern-angular-app:build:production",
+              "serverTarget": "modern-angular-app:server:production"
+            },
+            "development": {
+              "browserTarget": "modern-angular-app:build:development",
+              "serverTarget": "modern-angular-app:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
