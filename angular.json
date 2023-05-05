@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "modern-angular-app": {
+    "angular-base-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -43,20 +43,13 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/modern-angular-app/browser",
+            "outputPath": "dist/angular-base-app/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -90,10 +83,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "modern-angular-app:build:production"
+              "browserTarget": "angular-base-app:build:production"
             },
             "development": {
-              "browserTarget": "modern-angular-app:build:development"
+              "browserTarget": "angular-base-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -101,31 +94,23 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "modern-angular-app:build"
+            "browserTarget": "angular-base-app:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
             "scripts": []
           }
         },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/modern-angular-app/server",
+            "outputPath": "dist/angular-base-app/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
@@ -147,12 +132,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "modern-angular-app:build:development",
-              "serverTarget": "modern-angular-app:server:development"
+              "browserTarget": "angular-base-app:build:development",
+              "serverTarget": "angular-base-app:server:development"
             },
             "production": {
-              "browserTarget": "modern-angular-app:build:production",
-              "serverTarget": "modern-angular-app:server:production"
+              "browserTarget": "angular-base-app:build:production",
+              "serverTarget": "angular-base-app:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -160,18 +145,16 @@
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
           "options": {
-            "routes": [
-              "/"
-            ]
+            "routes": ["/"]
           },
           "configurations": {
             "production": {
-              "browserTarget": "modern-angular-app:build:production",
-              "serverTarget": "modern-angular-app:server:production"
+              "browserTarget": "angular-base-app:build:production",
+              "serverTarget": "angular-base-app:server:production"
             },
             "development": {
-              "browserTarget": "modern-angular-app:build:development",
-              "serverTarget": "modern-angular-app:server:development"
+              "browserTarget": "angular-base-app:build:development",
+              "serverTarget": "angular-base-app:server:development"
             }
           },
           "defaultConfiguration": "production"

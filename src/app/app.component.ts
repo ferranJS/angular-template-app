@@ -32,5 +32,5 @@ import { CommonModule } from '@angular/common';
   styles: [],
 })
 export class AppComponent {
-  title = 'modern-angular-app';
+  title = 'angular-base-app';
 }
