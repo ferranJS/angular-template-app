@@ -26,3 +26,8 @@ Sets up the environments files (without content), adds _fileReplacements_ to dev
       "serve:prod": "ng serve --c=production",
       "build:dev": "ng build --c=development",
       "build:prod": "ng build --c=production"
+
+## Todo
+- ESlint with ts-standard (linter + formatter)
+- Husky + Lint-staged (pre-commit git hooks)
+- prettier? (needed for tailwindcss)
