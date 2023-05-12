@@ -15,3 +15,14 @@ Manually install and add NgRx to app.config.ts because NgRx doesn't support stan
 No flag when creating the project, but we can add it later
 
     ng g c components/abcxyz --change-detection OnPush
+
+
+## 3. Environments setup
+    ✔ ng generate environments
+Sets up the environments files (without content), adds _fileReplacements_ to development build and server (Universal) config.
+- Scripts in package.json:
+
+      "serve:dev": "ng serve --c=development",
+      "serve:prod": "ng serve --c=production",
+      "build:dev": "ng build --c=development",
+      "build:prod": "ng build --c=production"

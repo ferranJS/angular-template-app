@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -33,4 +34,5 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'angular-base-app';
+  ngOnInit(){console.log(environment.production)}
 }
