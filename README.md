@@ -12,7 +12,7 @@ Manually install and add NgRx to app.config.ts because NgRx doesn't support stan
     ✔ ng add @nguniversal/express-engine@next
 
 ## 2. ChangeDetectionStrategy.OnPush
-No flag when creating the project, but we can add it later
+No flag when creating the project for now, but we can add it later
 
     ng g c components/abcxyz --change-detection OnPush
 
