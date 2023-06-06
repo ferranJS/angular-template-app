@@ -1,4 +1,4 @@
-# angular-base-app
+# modern angular template app
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.0.
 
 	  ng new angular-base-app --standalone --inline-style --inline-template --skip-tests
