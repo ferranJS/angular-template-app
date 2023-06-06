@@ -67,6 +67,4 @@ lint-staged config for *prettier write* & *eslint --fix* in package.json:
 
 
 ## Todo
-- ESlint with ts-standard (linter + formatter)
-- Husky + Lint-staged (pre-commit git hooks)
-- prettier? (needed for tailwindcss)
+- Branch ngrx & universal
