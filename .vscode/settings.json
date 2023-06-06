@@ -1,0 +1,9 @@
+{
+  "eslint.rules.customizations": [
+    {
+      "rule": "*",
+      "severity": "warn"
+    }
+  ],
+  "typescript.tsdk": "node_modules/typescript/lib"
+}

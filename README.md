@@ -27,6 +27,35 @@ Sets up the environments files (without content), adds _fileReplacements_ to dev
       "build:dev": "ng build --c=development",
       "build:prod": "ng build --c=production"
 
+## 4. ESlint & Prettier
+    ✔ npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
+    ✔ npm install --save-dev prettier eslint-config-prettier prettier-plugin-tailwindcss -D
+    (prettier-plugin-tailwindcss for automatic class sorting for consistency and efficiency)
+- Scripts in package.json:
+
+    "prettify": "npx prettier --write src",
+    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+    "lint:fix": "eslint . --fix",
+
+## 4. Precommit Hooks with Husky & Lint-staged
+    ✔ npm i husky lint-staged -D
+    ✔ husky install
+    ✔ npx husky add .husky/pre-commit "npx lint-staged --concurrent false"
+
+lint-staged config for *prettier write* & *eslint --fix* in package.json:
+
+    "lint-staged": {
+        "src/**/*": [
+        "prettier --write"
+        ],
+        "src/**/*.{js,jsx,ts,tsx}": [
+        "eslint --fix"
+        ]
+    }
+
+
+
+
 ## Todo
 - ESlint with ts-standard (linter + formatter)
 - Husky + Lint-staged (pre-commit git hooks)
