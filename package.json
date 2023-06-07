@@ -1,5 +1,5 @@
 {
-  "name": "angular-base-app",
+  "name": "modern-angular-template-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -11,10 +11,10 @@
     "build:dev": "ng build --c=development",
     "build:prod": "ng build --c=production",
     "test": "ng test",
-    "dev:ssr": "ng run angular-base-app:serve-ssr",
-    "serve:ssr": "node dist/angular-base-app/server/main.js",
-    "build:ssr": "ng build && ng run angular-base-app:server",
-    "prerender": "ng run angular-base-app:prerender",
+    "dev:ssr": "ng run modern-angular-template-app:serve-ssr",
+    "serve:ssr": "node dist/modern-angular-template-app/server/main.js",
+    "build:ssr": "ng build && ng run modern-angular-template-app:server",
+    "prerender": "ng run modern-angular-template-app:prerender",
     "prettify": "npx prettier --write src",
     "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
     "lint:fix": "eslint . --fix",

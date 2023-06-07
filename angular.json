@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-base-app": {
+    "modern-angular-template-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -43,7 +43,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser-esbuild",
           "options": {
-            "outputPath": "dist/angular-base-app/browser",
+            "outputPath": "dist/modern-angular-template-app/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -89,10 +89,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-base-app:build:production"
+              "browserTarget": "modern-angular-template-app:build:production"
             },
             "development": {
-              "browserTarget": "angular-base-app:build:development"
+              "browserTarget": "modern-angular-template-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -100,7 +100,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-base-app:build"
+            "browserTarget": "modern-angular-template-app:build"
           }
         },
         "test": {
@@ -116,7 +116,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/angular-base-app/server",
+            "outputPath": "dist/modern-angular-template-app/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
@@ -144,12 +144,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "angular-base-app:build:development",
-              "serverTarget": "angular-base-app:server:development"
+              "browserTarget": "modern-angular-template-app:build:development",
+              "serverTarget": "modern-angular-template-app:server:development"
             },
             "production": {
-              "browserTarget": "angular-base-app:build:production",
-              "serverTarget": "angular-base-app:server:production"
+              "browserTarget": "modern-angular-template-app:build:production",
+              "serverTarget": "modern-angular-template-app:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -161,12 +161,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-base-app:build:production",
-              "serverTarget": "angular-base-app:server:production"
+              "browserTarget": "modern-angular-template-app:build:production",
+              "serverTarget": "modern-angular-template-app:server:production"
             },
             "development": {
-              "browserTarget": "angular-base-app:build:development",
-              "serverTarget": "angular-base-app:server:development"
+              "browserTarget": "modern-angular-template-app:build:development",
+              "serverTarget": "modern-angular-template-app:server:development"
             }
           },
           "defaultConfiguration": "production"
