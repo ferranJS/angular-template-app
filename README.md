@@ -3,15 +3,16 @@ A template project to create an up-to-date Angular app with scripts and environm
 
 There are also branches for SSR with Angular Universal, NgRx (Redux) support, Firebase, etc.
 
-	  ng new modern-angular-template-app --standalone --inline-style --inline-template --skip-tests
+>ng new modern-angular-template-app --standalone --inline-style --inline-template --skip-tests
 
 ## 1. ChangeDetectionStrategy.OnPush
 There's still no flag when creating the project for now, but we can add it after project creation.
 
-    ng g c components/abcxyz --change-detection OnPush
+>ng g c components/abcxyz --change-detection OnPush
 
 ## 2. Environments setup
-    ng generate environments
+>ng generate environments
+
 Sets up the environments files (without content), adds _fileReplacements_ to development build and Angular Universal config (in case you add it before).
 - Scripts in package.json:
 
@@ -21,19 +22,24 @@ Sets up the environments files (without content), adds _fileReplacements_ to dev
       "build:prod": "ng build --c=production"
 
 ## 3. ESlint & Prettier
-    npm i --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin -D
-    npm i --save-dev prettier eslint-config-prettier prettier-plugin-tailwindcss -D
+>npm i -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin 
+
+>npm i -D prettier eslint-config-prettier prettier-plugin-tailwindcss 
+
     (prettier-plugin-tailwindcss for automatic class sorting for consistency and efficiency)
 - Scripts in package.json:
 
-    "prettify": "npx prettier --write src",
-    "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
-    "lint:fix": "eslint . --fix",
+        "prettify": "npx prettier --write src",
+        "lint": "eslint . --max-warnings 0 --report-unused-disable-directives",
+        "lint:fix": "eslint . --fix",
 
 ## 4. Precommit Hooks with Husky & Lint-staged
-    npm i husky lint-staged -D
-    husky install
-    npx husky add .husky/pre-commit "npx lint-staged --concurrent false"
+
+>npm i husky lint-staged -D
+
+>husky install
+
+>npx husky add .husky/pre-commit "npx lint-staged --concurrent false"
 
 
 lint-staged config for *prettier write* & *eslint --fix* in package.json:
@@ -48,9 +54,11 @@ lint-staged config for *prettier write* & *eslint --fix* in package.json:
     }
 
 ## 5. Tailwindcss + Postcss + Autoprefixer [setup](https://tailwindcss.com/docs/installation)
-       npm install -D tailwindcss postcss autoprefixer
-       npx tailwindcss init
-    ❔ npm i tailwind-scrollbar-hide
+>npm install -D tailwindcss postcss autoprefixer
+
+>npx tailwindcss init
+
+>❔ npm i tailwind-scrollbar-hide
 Add *styles.css*: 
 
     @tailwind base;
@@ -60,9 +68,11 @@ Add *styles.css*:
 ## - NgRx branch: 
 NgRx doesn't support standalone yet so manually install with npm:
 
-    ❌ng add @ngrx/store@next
-    ❌ng add @ngrx/effects@next
-    ❌ng add @ngrx/store-devtools@next 
+>❌ng add @ngrx/store@next
+
+>❌ng add @ngrx/effects@next
+
+>❌ng add @ngrx/store-devtools@next 
 
 And add NgRx to app.config.ts:
 
@@ -73,5 +83,5 @@ And add NgRx to app.config.ts:
     )
 
 ## - SSR branch (Angular Universal):
-    ng add @nguniversal/express-engine@next
+>ng add @nguniversal/express-engine@next
 
